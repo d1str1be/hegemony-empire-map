@@ -1,0 +1,1 @@
+https://d1str1be.github.io/hegemony-empire-map/

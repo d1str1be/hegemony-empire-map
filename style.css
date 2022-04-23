@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+@font-face {
+  font-family: "crashnumber";
+  src: url(fonts/Crashnumber-bold.ttf) format("truetype");
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  --vh: 0px;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(129, 191, 254);
+}
+
+a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+#frame {
+  position: relative;
+}
+
+#map {
+  min-width: 100%;
+  min-height: 100%;
+  transition: 1s;
+  touch-action: pinch-zoom; /* not supported by safari */
+}
+#map__img {
+  cursor: move;
+  position: relative;
+  width: auto;
+  height: 100%;
+}
+
+#menu {
+  display: grid;
+  grid-gap: 1.5vh 0.5vh;
+  grid-template-columns: 4vh auto;
+  grid-template-rows: auto auto;
+  position: absolute;
+  z-index: 10;
+  top: 3vh;
+  left: 3vh;
+  pointer-events: none;
+}
+
+.button,
+.menu__item,
+.menu__header__item {
+  /* menu elements color */
+  color: white;
+  background-color: rgba(9, 7, 7, 0.7);
+}
+
+#menu__header {
+  /* top line of the menu */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 15vh;
+  grid-template-rows: 4vh;
+  grid-template-columns: repeat(3, 4vh);
+}
+
+#menu__settings {
+  /* layer options */
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0.5vh;
+  grid-template-rows: repeat(3, 4vh);
+  grid-template-columns: 5vh;
+  visibility: visible;
+  position: fixed;
+}
+
+.button,
+.menu__header__item {
+  /* all small menu tiles */
+  width: 13vh;
+  padding-top: 1.33vh;
+  text-align: center;
+  font-family: "crashnumber", monospace;
+  font-size: 1.5vh;
+  pointer-events: auto;
+}
+
+.button.active,
+.menu__header__item.active {
+  padding-top: calc(1.33vh - 2px);
+  color: rgba(9, 7, 7, 0.7);
+  border: 2px solid rgba(9, 7, 7, 0.7);
+  background-color: rgba(129, 191, 254, 0.95);
+}
+
+.text{
+  padding-top: 1vh;
+}
+.text.active{
+  padding-top: calc(1vh - 2px);
+}
+
+/*
+.no-padding {
+  padding: 0;
+}
+.icon {
+  padding: 25%;
+  width: 2vh;
+  height: 2vh;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}*/
+
+@media only screen and (max-width: 768px) {
+  #map__img {
+    left: -50%;
+  }
+  #menu {
+    display: grid;
+    grid-gap: calc(var(--vh) * 1.5) calc(var(--vh) * 0.5);
+    grid-template-columns: calc(var(--vh) * 4) auto;
+    top: calc(var(--vh) * 3);
+    left: calc(var(--vh) * 3);
+  }
+  #menu__header {
+    grid-gap: calc(var(--vh) * 0.5);
+    grid-template-rows: calc(var(--vh) * 4);
+    grid-template-columns: repeat(3, calc(var(--vh) * 4));
+  }
+  /*    for more than 2 columns in the future
+  #menu__moves__full {
+    grid-template-columns: calc(var(--vh) * 4) calc(var(--vh) * 4);
+  }*/
+  #menu__settings {
+    grid-gap: calc(var(--vh) * 0.5);
+    grid-template-rows: repeat(3, calc(var(--vh) * 4));
+    grid-template-columns: calc(var(--vh) * 17.5);
+	visibility: visible;
+  }
+  .button {
+    font-size: calc(var(--vh) * 1.5);
+  }
+  /*.icon {
+    width: calc(var(--vh) * 2);
+    height: calc(var(--vh) * 2);
+  }*/
+}
