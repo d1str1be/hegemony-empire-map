@@ -51,7 +51,7 @@ a {
 
 #menu {
   display: grid;
-  grid-gap: 1.5vh 0.5vh;
+  grid-gap: 1.5vh 1.5vh;
   grid-template-columns: 4vh auto;
   grid-template-rows: auto auto;
   position: absolute;
@@ -135,16 +135,26 @@ a {
   }
   #menu {
     display: grid;
-    grid-gap: calc(var(--vh) * 1.5) calc(var(--vh) * 0.5);
-    grid-template-columns: calc(var(--vh) * 4) auto;
-    top: calc(var(--vh) * 3);
-    left: calc(var(--vh) * 3);
+    grid-gap: 0.5vh 0.5vh;
+    grid-template-columns: 0.5vh 0.5vh;
+    top: 2vh;
+    left: 2vh;
   }
   #menu__header {
-    grid-gap: calc(var(--vh) * 0.5);
-    grid-template-rows: calc(var(--vh) * 4);
-    grid-template-columns: repeat(3, calc(var(--vh) * 4));
+    grid-gap: 16vh;
+    grid-template-rows: 4vh;
+    grid-template-columns: repeat(3, 1vh);
   }
+  .button,
+	.menu__header__item {
+	  /* all small menu tiles */
+	  width: 10vh;
+	  padding-top: 1.33vh;
+	  text-align: center;
+	  font-family: "crashnumber", monospace;
+	  font-size: 1.5vh;
+	  pointer-events: auto;
+	}
   /*    for more than 2 columns in the future
   #menu__moves__full {
     grid-template-columns: calc(var(--vh) * 4) calc(var(--vh) * 4);
