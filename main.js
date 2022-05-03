@@ -152,3 +152,5 @@ function updateURL(event) {
 
 menu.addEventListener('touchend', event => { updateURL(event) })
 menu.addEventListener('click', event => { updateURL(event) })
+
+console.log(`Hello world!`)
