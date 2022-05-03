@@ -84,7 +84,7 @@ a {
   /* layer options */
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 5vh;
+  grid-gap: 0.5vh;
   grid-template-rows: repeat(6, 4vh);
   grid-template-columns: 5vh;
   visibility: visible;
