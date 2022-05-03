@@ -87,10 +87,10 @@ function getURL(key) {
     let keys = {
 		'Полит.карта': 'images/Politkarta_1700.png',
         'Рассадка': 'images/Politkarta_1700_rassadka.png',
-        //'Ресурсы': 'images/resources.jpg',
-        //'Климат': 'images/climate.jpg',
+        'LVL пров.': 'images/Plotnost_nasel_1700.png',
+        'Климат': 'images/Klimat_1700.png',
         'Этнос': 'images/Etnokarta_1700.png',
-        //'Религия': 'images/religion.png',
+        'Ландшафт': 'images/Landshaft_1700.png',
     }
     if (/^[1-9][0-9]*$/.test(key)) {
         url = `images/karta_${key}_khod.png`
