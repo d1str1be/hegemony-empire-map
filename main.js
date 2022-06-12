@@ -86,7 +86,7 @@ function getURL(key) {
     let url = ''
     let keys = {
 		'Полит.карта': 'images/Politkarta_1700.png',
-        'Рассадка': 'images/Politkarta_1700_rassadka.png',
+        'Рассадка': 'images/Politkarta_1700_rassadka_v2.png',
         'LVL пров.': 'images/Plotnost_nasel_1700.png',
         'Климат': 'images/Klimat_1700.png',
         'Этнос': 'images/Etnokarta_1700.png',
