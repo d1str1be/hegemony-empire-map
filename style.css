@@ -91,7 +91,7 @@ a {
   position: fixed;
 }
 
-.button,
+.button, .turns_menu,
 .menu__header__item {
   /* all small menu tiles */
   width: 13vh;
@@ -111,11 +111,32 @@ a {
 }
 
 .text{
-  padding-top: 1vh;
+
 }
 .text.active{
-  padding-top: calc(1vh - 2px);
+  padding-top: calc(1vh);
 }
+
+#turns_menu {
+  display: grid;
+  grid-gap: 0.5vh 1vh;
+  grid-template-columns: 13vh auto;
+  grid-template-rows: 4vh 13vh;
+  z-index: 11;
+  pointer-events: none;
+}
+#turns_buttons {
+  /* layer options */
+  /* layer options */
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0.5vh;
+  grid-template-rows: repeat(5, 4vh);
+  grid-template-columns: 13vh;
+  visibility: visible;
+  position: fixed;
+}
+
 
 /*
 .no-padding {

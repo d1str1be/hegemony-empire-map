@@ -7,10 +7,10 @@ const map = document.getElementById('map')
 const mapImg = document.getElementById('map__img')
 const menu = document.getElementById('menu')
 //const moves_default = document.getElementById('menu__moves')
-const moves_dropdown = document.getElementById('menu__moves__full')
-
+const moves_dropdown = document.getElementById('turns_buttons')
 
 mapImg.setAttribute('src', getURL('Полит.карта'))
+moves_dropdown.style.visibility = 'hidden'
 
 // zoom functionality
 let scale = 1;
@@ -92,7 +92,9 @@ function getURL(key) {
         'Этнос': 'images/Etnokarta_1700.png',
         'Ландшафт': 'images/Landshaft_1700.png',
 		'Ресурсы пров.': 'images/Resursy_1700.png',
-		'Ресурсы город.': 'images/Gorodskie_tovary_1700.png'
+		'Ресурсы город.': 'images/Gorodskie_tovary_1700.png',
+		'Начало партии': 'images/Politkarta_1700.png',
+		'Ход 1': 'images/Khod_1.png',		
     }
     if (/^[1-9][0-9]*$/.test(key)) {
         url = `images/karta_${key}_khod.png`
@@ -104,6 +106,7 @@ function getURL(key) {
 }
 
 function updateURL(event) {
+	//console.log(event.target.classList)
     if (event.target.classList.contains('image')) {
         moveID = event.target.innerText
         let newURL = getURL(moveID)
@@ -133,8 +136,6 @@ function updateURL(event) {
             }
         }
         // add active class to new active header item based on value
-        console.log(`past active = ${activeMenuHeader}`)
-        console.log(`new  active = ${event.target}`)
         if (activeMenuHeader !== event.target) {
             event.target.classList.add('active')
             if (itemId) {
@@ -150,6 +151,28 @@ function updateURL(event) {
             }
         }
     }
+	if (event.target.classList.contains('turns_header')) {
+		const activeMenuHeader = document.querySelector('.button.image.turns_header.active')
+        const activeDropdownItem = document.querySelector('.dropdown__turns__item.active')
+        if (activeMenuHeader) {
+			//console.log('deactiv')
+            activeMenuHeader.classList.remove('active')
+            if (activeDropdownItem) {
+                activeDropdownItem.classList.remove('active')
+                activeDropdownItem.style.visibility = 'hidden'
+            }
+        }
+        // add active class to new active header item based on value
+        if (activeMenuHeader !== event.target) {
+			//console.log('activ')
+            event.target.classList.add('active')
+            const dropdownMenuItem = document.querySelector('.dropdown__turns__item')
+            dropdownMenuItem.style.visibility = 'visible'
+            dropdownMenuItem.classList.add('active')
+            event.stopPropagation()
+            event.preventDefault()
+        }
+	}
 }
 
 menu.addEventListener('touchend', event => { updateURL(event) })
