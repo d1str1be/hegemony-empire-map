@@ -94,7 +94,14 @@ function getURL(key) {
 		'Ресурсы пров.': 'images/Resursy_1700.png',
 		'Ресурсы город.': 'images/Gorodskie_tovary_1700.png',
 		'Начало партии': 'images/Politkarta_1700.png',
-		'Ход 1': 'images/Khod_1.png',		
+		'Ход 1': 'images/Khod_1.png',
+		'Ход 2': 'images/Khod_2.png',
+		'Ход 3': 'images/Khod_3.png',
+		'Ход 4': 'images/Khod_4.png',
+		'Ход 5': 'images/Khod_5.png',
+		'Ход 6': 'images/Khod_6.png',
+		'Ход 7': 'images/Khod_7.png',
+		
     }
     if (/^[1-9][0-9]*$/.test(key)) {
         url = `images/karta_${key}_khod.png`
